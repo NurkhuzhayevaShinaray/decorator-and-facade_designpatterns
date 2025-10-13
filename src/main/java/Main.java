@@ -1,5 +1,11 @@
+import decorators.EnergySaving;
+import decorators.RemoteAccess;
+import decorators.VoiceControl;
+import devices.*;
+import facade.HomeAutomationFacade;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args){
         Light light = new Light();
         Device decoratedLight = new RemoteAccess(new EnergySaving(light));
         MusicSystem musicSystem = new MusicSystem();
@@ -11,8 +17,8 @@ public class Main {
 
         HomeAutomationFacade facade = new HomeAutomationFacade(light,musicSystem,thermostat,securityCamera);
         facade.gettingReadyMode();
-        decoratedLight.operate(light.on());
+        decoratedLight.operate(light.syncEffect());
         decoratedMusicSystem.operate(musicSystem.playMusic());
         decoratedThermostat.operate(thermostat.regulateTemperature());
+       }
     }
-}

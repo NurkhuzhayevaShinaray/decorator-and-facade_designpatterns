@@ -1,9 +1,10 @@
+package decorators;
+import devices.Device;
+
 public class EnergySaving extends DeviceDecorator {
     public EnergySaving(Device device){
         super(device);
     }
-
-
 
     @Override
     public void operate(String text) {

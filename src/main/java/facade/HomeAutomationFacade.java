@@ -1,3 +1,9 @@
+package facade;
+import devices.SecurityCamera;
+import devices.Light;
+import devices.MusicSystem;
+import devices.Thermostat;
+
 public class HomeAutomationFacade {
     private final Light light;
     private final MusicSystem musicSystem;
@@ -14,24 +20,25 @@ public class HomeAutomationFacade {
     public void activateNightMode(){
         System.out.println("Night mode is activated: ");
         light.off();
-        thermostat.regulateTemperature();
-        securityCamera.checkCamera();
+        thermostat.ecoMode();
+        securityCamera.motionMode();
     }
     public void startPartyMode(){
         System.out.println("Party mode is activated:");
-        light.on();
+        light.dimEffect();
         musicSystem.playMusic();
+        musicSystem.setVolume(100);
     }
     public void leaveHomeMode(){
         System.out.println("Leaving home mode is activated: ");
         light.off();
         musicSystem.stopMusic();
-        thermostat.showTemperature();
-        securityCamera.checkCamera();
+        thermostat.autoMode();
+        securityCamera.recordMode();
     }
     public void gettingReadyMode(){
         System.out.println("Getting ready mode is activated: ");
-        light.on();
+        light.syncEffect();
         musicSystem.playMusic();
         thermostat.regulateTemperature();
     }

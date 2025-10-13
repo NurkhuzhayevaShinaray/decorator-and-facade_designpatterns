@@ -1,3 +1,6 @@
+package decorators;
+import devices.Device;
+
 public class RemoteAccess extends DeviceDecorator {
     public RemoteAccess(Device device){
         super(device);

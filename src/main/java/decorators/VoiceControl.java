@@ -1,3 +1,6 @@
+package decorators;
+import devices.Device;
+
 public class VoiceControl extends DeviceDecorator {
     public VoiceControl(Device device){
         super(device);
