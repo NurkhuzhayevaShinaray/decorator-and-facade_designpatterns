@@ -40,6 +40,7 @@ public class RemoteAccess extends DeviceDecorator {
                 System.out.print("Enter temperature (18-30): ");
                 double temperature = scanner.nextDouble();
                 homeFacade.gettingReadyMode(volume, temperature);
+                break;
             }
             default:  System.out.println("Invalid choice!");
         }

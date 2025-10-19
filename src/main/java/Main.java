@@ -16,8 +16,7 @@ public class Main {
         BluetoothMusicSystem bluetoothSystem = new BluetoothMusicSystem();
         WifiThermostat wifiThermostat = new WifiThermostat();
 
-        HomeAutomationFacade homeFacade = new HomeAutomationFacade(
-                light, bluetoothSystem, musicSystem, wifiThermostat, thermostat, securityCamera);
+        HomeAutomationFacade homeFacade = new HomeAutomationFacade(light, bluetoothSystem, musicSystem, wifiThermostat, thermostat, securityCamera);
 
         VoskLibrary vosk = new VoskLibrary("src/main/resources/vosk-model-small-en-us-0.15");
 
@@ -34,7 +33,7 @@ public class Main {
             voice.operate("Activating by voice...");
             String command = voice.voiceCommand();
         } else if (choice == 2) {
-            RemoteAccess remote = new RemoteAccess(thermostat, homeFacade);
+            RemoteAccess remote = new RemoteAccess(light, homeFacade);
             remote.operate("Activating by remote...");
         } else {
             System.out.println("Incorrect, exiting...");
