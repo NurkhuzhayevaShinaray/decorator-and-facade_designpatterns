@@ -1,14 +1,22 @@
 package devices;
 
+
 public class Thermostat implements Device {
-    public String regulateTemperature(){
-        return "regulating the temperature ";
+    private double temperature;
+
+    public void regulateTemperature(double temperature){
+        if (temperature >= 18 && temperature <= 30){
+            this.temperature=temperature;
+            System.out.println("regulating the temperature " + temperature);}
+        else {
+            System.out.println("You need to choose between 18 and 30!");
+        }
     }
-    public String ecoMode() {
-        return "adjusting temperature range";
+    public void ecoMode() {
+        System.out.println("eco mode:adjusting temperature range");
     }
-    public String autoMode(){
-        return "automatically maintain perfect temperature";
+    public void autoMode(){
+        System.out.println("auto mode:automatically maintain perfect temperature");
     }
 
 

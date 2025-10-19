@@ -1,14 +1,14 @@
 package devices;
 
 public class SecurityCamera implements Device {
-    public String recordMode() {
-        return "checks the camera";
+    public void recordMode() {
+        System.out.println("record mode:checks the camera");
     }
-    public String privacyMode() {
-        return "turns the camera off";
+    public void privacyMode() {
+        System.out.println("privacy mode:turns the camera off");
     }
-    public String motionMode() {
-        return "detects movements";
+    public void motionMode() {
+        System.out.println("motion mode:detects movements");
     }
 
     @Override

@@ -1,16 +1,21 @@
 package devices;
 
 public class MusicSystem implements Device {
-    private int volume = 50;
-    public String playMusic(){
-        return "turning music on";
+    private int volume;
+
+    public void playMusic(){
+        System.out.println("turning music on");
     }
-    public String setVolume(int volume){
+    public void setVolume(int volume){
+        if(volume >=0 && volume <=100){
         this.volume = volume;
-        return "sets volume to " + volume;
+        System.out.println("Sets volume to " + volume + "%");}
+        else {
+            System.out.println("Please choose between 0 and 100!");
+        }
     }
-    public String stopMusic(){
-        return "turning music off";
+    public void stopMusic(){
+        System.out.println("turning music off");
     }
 
     @Override
