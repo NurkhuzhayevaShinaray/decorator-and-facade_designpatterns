@@ -31,9 +31,12 @@ public class RemoteAccess extends DeviceDecorator {
                 System.out.print("Enter music volume (0-100): ");
                 int volume = scanner.nextInt();
                 homeFacade.startPartyMode(level, volume);
+                break;
             }
             case 2: homeFacade.activateNightMode();
+            break;
             case 3: homeFacade.leaveHomeMode();
+            break;
             case 4: {
                 System.out.print("Enter volume (0-100): ");
                 int volume = scanner.nextInt();
@@ -41,6 +44,7 @@ public class RemoteAccess extends DeviceDecorator {
                 double temperature = scanner.nextDouble();
                 homeFacade.gettingReadyMode(volume, temperature);
                 break;
+
             }
             default:  System.out.println("Invalid choice!");
         }
